@@ -8,7 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var notesRouter = require('./routes/notes');
+<<<<<<< HEAD
 var catRouter = require('./routes/cat');
+=======
+>>>>>>> 250030a3969e3771a90038368f839cb27420de62
 
 var app = express();
 
@@ -26,7 +29,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello', helloRouter);
 app.use('/notes', notesRouter);
+<<<<<<< HEAD
 app.use('/cat', catRouter);
+=======
+>>>>>>> 250030a3969e3771a90038368f839cb27420de62
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

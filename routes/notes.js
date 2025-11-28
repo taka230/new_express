@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express');
 var router = express.Router();
  
@@ -21,3 +22,28 @@ router.get('/',async (requestAnimationFrame, res) => {
 })
 
 module.exports = router;
+=======
+var express = require('express');
+var router = express.Router();
+ 
+
+
+//接続情報を設定
+const{MongoClient} = require("mongodb");
+const uri = "mongodb+srv://taka230:trigger@cluster0.5t0sigv.mongodb.net/?appName=Cluster0";
+const client = new MongoClient(uri);
+
+router.get('/',async (requestAnimationFrame, res) => {
+	//データベース、コレクションを指定
+	const database = client.db('notes');
+	const notes = database.collection('notes');
+
+	//idが1のドキュメントを取得
+	const query = { id:2 };
+	const note = await notes.findOne(query);
+
+	res.json(note.title);
+})
+
+module.exports = router;
+>>>>>>> 250030a3969e3771a90038368f839cb27420de62
